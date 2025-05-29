@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курс ChatGPT - Обучение основам работы с ИИ</title>
+    <meta name="description" content="Интерактивный курс по изучению ChatGPT. Научитесь эффективно работать с искусственным интеллектом за 1.5-2 часа.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Главный контейнер -->
+    <div id="app" class="app">
+        <!-- Боковая панель модулей -->
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <h2>Модули курса</h2>
+                <button id="close-sidebar" class="close-btn">×</button>
+            </div>
+            <nav class="modules-nav">
+                <div class="module-item active" data-module="0">
+                    <div class="module-header">
+                        <span class="module-number">0</span>
+                        <div class="module-info">
+                            <h3>Введение</h3>
+                            <p>Кратко расскажем о том, что вас ждет на этом мини-курсе</p>
+                            <span class="module-time">15 мин • 5 уроков</span>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+                
+                <div class="module-item" data-module="1">
+                    <div class="module-header">
+                        <span class="module-number">1</span>
+                        <div class="module-info">
+                            <h3>Доступ к ChatGPT</h3>
+                            <p>Способы доступа, тарифы, ограничения бесплатной версии</p>
+                            <span class="module-time">45 мин • 18 уроков</span>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+                
+                <div class="module-item" data-module="2">
+                    <div class="module-header">
+                        <span class="module-number">2</span>
+                        <div class="module-info">
+                            <h3>Основы ChatGPT</h3>
+                            <p>Как устроен ChatGPT и правильное формулирование запросов</p>
+                            <span class="module-time">30 мин • 12 уроков</span>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+                
+                <div class="module-item" data-module="3">
+                    <div class="module-header">
+                        <span class="module-number">3</span>
+                        <div class="module-info">
+                            <h3>ChatGPT PRO</h3>
+                            <p>Продвинутые техники промптинга и методология CRAFT</p>
+                            <span class="module-time">35 мин • 15 уроков</span>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Основной контент -->
+        <main class="main-content">
+            <!-- Верхняя панель -->
+            <header class="top-bar">
+                <div class="top-bar-left">
+                    <button id="menu-btn" class="menu-btn">☰</button>
+                    <div class="breadcrumb">
+                        <span id="current-module">Введение</span>
+                        <span class="separator">/</span>
+                        <span id="current-lesson">О курсе</span>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <div class="overall-progress">
+                        <span class="progress-text">Общий прогресс</span>
+                        <div class="progress-bar small">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-percent">0%</span>
+                    </div>
+                    <div class="user-avatar">АИ</div>
+                </div>
+            </header>
+
+            <!-- Контент урока -->
+            <div class="lesson-container">
+                <div class="lesson-content">
+                    <div class="lesson-header">
+                        <h1 id="lesson-title">Добро пожаловать в мини-курс по основам работы с ChatGPT</h1>
+                        <div class="lesson-meta">
+                            <span class="lesson-number">Урок <span id="lesson-current">1</span> из <span id="lesson-total">5</span></span>
+                            <span class="lesson-time">⏱ 3 мин</span>
+                            <span class="lesson-difficulty easy">Легко</span>
+                        </div>
+                    </div>
+
+                    <div id="lesson-body" class="lesson-body">
+                        <div class="objectives">
+                            <h3>Цели урока:</h3>
+                            <ul id="objectives-list">
+                                <li>Разберетесь, как устроен ChatGPT</li>
+                                <li>Научитесь формулировать эффективные запросы (промты)</li>
+                                <li>Получите набор готовых шаблонов и различных примеров</li>
+                                <li>Внедрите ИИ в одну из своих реальных задач</li>
+                                <li>Начнёте экономить время и действовать увереннее</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Навигация по урокам -->
+                    <div class="lesson-navigation">
+                        <button id="prev-lesson" class="nav-btn prev" disabled>
+                            ← Предыдущий урок
+                        </button>
+                        <button id="next-lesson" class="nav-btn next">
+                            Следующий урок →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Чат-панель -->
+                <aside id="chat-panel" class="chat-panel">
+                    <div class="chat-header">
+                        <h3>ИИ-помощник</h3>
+                        <button id="chat-toggle" class="chat-toggle">💬</button>
+                    </div>
+                    <div class="chat-content">
+                        <div id="chat-messages" class="chat-messages">
+                            <div class="chat-message assistant">
+                                <div class="message-content">
+                                    Привет! Я ваш ИИ-помощник. Задавайте вопросы по урокам, и я помогу вам разобраться с материалом.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-input-container">
+                            <input type="text" id="chat-input" placeholder="Задайте вопрос..." />
+                            <button id="send-message" class="send-btn">Отправить</button>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+
+    <!-- Мобильная кнопка меню -->
+    <button id="mobile-menu" class="mobile-menu-btn">☰</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
