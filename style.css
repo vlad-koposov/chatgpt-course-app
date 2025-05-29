@@ -1,0 +1,696 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Боковая панель */
+.sidebar {
+    width: 320px;
+    background: #ffffff;
+    border-right: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 1000;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.sidebar-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar-header h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #64748b;
+    cursor: pointer;
+    display: none;
+}
+
+.modules-nav {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.module-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.module-item:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+.module-item.active {
+    background: #dbeafe;
+    border-color: #3b82f6;
+}
+
+.module-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.module-number {
+    background: #3b82f6;
+    color: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+    flex-shrink: 0;
+}
+
+.module-info h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: #1e293b;
+}
+
+.module-info p {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+}
+
+.module-time {
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+
+.progress-bar {
+    background: #e2e8f0;
+    height: 4px;
+    border-radius: 2px;
+    margin-top: 0.75rem;
+    overflow: hidden;
+}
+
+.progress-fill {
+    background: #3b82f6;
+    height: 100%;
+    transition: width 0.5s ease;
+}
+
+/* Основной контент */
+.main-content {
+    flex: 1;
+    margin-left: 320px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Верхняя панель */
+.top-bar {
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    color: #64748b;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    display: none;
+}
+
+.menu-btn:hover {
+    background: #f1f5f9;
+}
+
+.breadcrumb {
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+.separator {
+    margin: 0 0.5rem;
+}
+
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.overall-progress {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.progress-text {
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+.progress-bar.small {
+    width: 120px;
+    height: 6px;
+}
+
+.progress-percent {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #1e293b;
+}
+
+.user-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: #3b82f6;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+/* Контейнер урока */
+.lesson-container {
+    flex: 1;
+    display: flex;
+}
+
+.lesson-content {
+    flex: 1;
+    padding: 2rem;
+    max-width: 800px;
+}
+
+.lesson-header {
+    margin-bottom: 2rem;
+}
+
+.lesson-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.lesson-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.lesson-number {
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+.lesson-time {
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+.lesson-difficulty {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.lesson-difficulty.easy {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.lesson-difficulty.medium {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.lesson-difficulty.hard {
+    background: #fecaca;
+    color: #991b1b;
+}
+
+/* Тело урока */
+.lesson-body {
+    margin-bottom: 3rem;
+}
+
+.objectives {
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.objectives h3 {
+    color: #1e40af;
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+}
+
+.objectives ul {
+    list-style: none;
+    padding: 0;
+}
+
+.objectives li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+    color: #1e40af;
+}
+
+.objectives li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #059669;
+    font-weight: bold;
+}
+
+.lesson-section {
+    margin-bottom: 2rem;
+}
+
+.lesson-section h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1e293b;
+}
+
+.lesson-section p {
+    color: #64748b;
+    margin-bottom: 1rem;
+}
+
+.lesson-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    border: 1px solid #e2e8f0;
+}
+
+/* Навигация по урокам */
+.lesson-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.nav-btn {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    background: white;
+    color: #374151;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover:not(:disabled) {
+    background: #f9fafb;
+    border-color: #d1d5db;
+}
+
+.nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.nav-btn.next {
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+}
+
+.nav-btn.next:hover {
+    background: #2563eb;
+}
+
+/* Чат-панель */
+.chat-panel {
+    width: 400px;
+    background: white;
+    border-left: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.chat-panel.hidden {
+    width: 60px;
+}
+
+.chat-header {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.chat-toggle {
+    background: #3b82f6;
+    border: none;
+    color: white;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
+}
+
+.chat-message {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    max-width: 85%;
+}
+
+.chat-message.user {
+    background: #dbeafe;
+    margin-left: auto;
+    text-align: right;
+}
+
+.chat-message.assistant {
+    background: #f1f5f9;
+}
+
+.message-content {
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.chat-input-container {
+    padding: 1rem;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    gap: 0.5rem;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+}
+
+.send-btn {
+    padding: 0.5rem 1rem;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+.send-btn:hover {
+    background: #2563eb;
+}
+
+/* Мобильная кнопка меню */
+.mobile-menu-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1001;
+    display: none;
+}
+
+/* Анимации */
+.chat-message-enter {
+    animation: slideInFromBottom 0.3s ease-out;
+}
+
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.loading-dots {
+    display: inline-flex;
+    gap: 4px;
+}
+
+.loading-dots > div {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #64748b;
+    animation: loading-dot 1.4s ease-in-out infinite both;
+}
+
+.loading-dots > div:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.loading-dots > div:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes loading-dot {
+    0%, 80%, 100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Отзывчивый дизайн */
+@media (max-width: 1024px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+    
+    .sidebar.show {
+        transform: translateX(0);
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .menu-btn {
+        display: block;
+    }
+    
+    .close-btn {
+        display: block;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .chat-panel {
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        z-index: 999;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .chat-panel.show {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .lesson-content {
+        padding: 1rem;
+    }
+    
+    .lesson-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .top-bar {
+        padding: 1rem;
+    }
+    
+    .overall-progress {
+        display: none;
+    }
+    
+    .lesson-navigation {
+        flex-direction: column;
+    }
+    
+    .nav-btn {
+        width: 100%;
+    }
+    
+    .chat-panel {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%;
+    }
+    
+    .lesson-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .breadcrumb {
+        font-size: 0.75rem;
+    }
+}
+
+/* Темная тема (по желанию) */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #0f172a;
+        color: #f8fafc;
+    }
+    
+    .sidebar,
+    .top-bar,
+    .chat-panel,
+    .nav-btn {
+        background: #1e293b;
+        border-color: #334155;
+    }
+    
+    .module-item {
+        background: #334155;
+        border-color: #475569;
+    }
+    
+    .module-item:hover {
+        background: #475569;
+    }
+    
+    .module-item.active {
+        background: #1e40af;
+    }
+    
+    .objectives {
+        background: #1e40af;
+        border-color: #3b82f6;
+    }
+    
+    .chat-message.user {
+        background: #1e40af;
+    }
+    
+    .chat-message.assistant {
+        background: #334155;
+    }
+}
